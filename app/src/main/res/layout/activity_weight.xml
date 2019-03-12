@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+        >
+
+        <NumberPicker
+            android:id="@+id/weight_id"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="140dp"
+            android:layout_marginTop="150dp">
+
+
+        </NumberPicker>
+
+        <NumberPicker
+            android:id="@+id/height_id"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="140dp"
+            android:layout_marginTop="120dp">
+
+
+        </NumberPicker>
+
+        <TextView
+            android:id="@+id/weight_text"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="130dp"
+            android:layout_marginTop="-250dp"
+            android:text="Choose your weight:" />
+
+        <TextView
+            android:id="@+id/height_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="130dp"
+            android:layout_marginTop="120dp"
+            android:text="Choose your height:" />
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
