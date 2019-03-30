@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    tools:context=".PedometerActivity">
 
     <TextView
         android:id="@+id/percentSteps"
@@ -43,26 +41,26 @@
 
 
         <ImageButton
-            android:id="@+id/calendarView"
+            android:id="@+id/calendarButton"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginLeft="-290dp"
             android:layout_marginTop="10dp"
             android:background="#00FFFFFF"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/calendarIcon" />
-
+            app:srcCompat="@drawable/calendaricon"
+            />
 
 
         <ImageView
-            android:id="@+id/kcalButton"
+            android:id="@+id/kcalIcon"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginLeft="90dp"
             android:layout_marginTop="295dp"
             android:background="#00FFFFFF"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/kcalBurn" />
+            app:srcCompat="@drawable/kcalburn" />
         <ImageView
             android:id="@+id/shoeIcon"
             android:layout_width="50dp"
@@ -71,6 +69,8 @@
             android:layout_marginLeft="-55dp"
             app:srcCompat="@drawable/shoe"
             />
+
+
 
         <ImageView
             android:id="@+id/distanceIcon"
@@ -101,15 +101,45 @@
             android:textColor="#FFDAB9"
             android:textStyle="bold"
             android:textSize="40dp"
+
             />
+
+
         <Button
             android:id="@+id/startPauseButton"
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:layout_marginTop="400dp"
             android:layout_marginLeft="-65dp"
+            android:layout_marginTop="400dp"
             android:text="START" />
-    </LinearLayout>
 
+        <TextView
+            android:id="@+id/timeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="320dp"
+            android:layout_weight="1"
+
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/kcalText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-345dp"
+            android:layout_marginTop="320dp"
+            android:layout_weight="1"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/distanceText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-340dp"
+            android:layout_marginTop="320dp"
+            android:layout_weight="1"
+            android:text="0" />
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

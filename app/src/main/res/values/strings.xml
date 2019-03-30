@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Calcul Mobil</string>
+    <string name="steps">%1$d</string>
+    <string name="time">%1$s</string>
+    <string name="distance">%1$s</string>
+    <string name="kcal">%1$d</string>
 </resources>
