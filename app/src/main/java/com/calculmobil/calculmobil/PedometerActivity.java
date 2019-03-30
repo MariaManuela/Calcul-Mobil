@@ -23,6 +23,7 @@ import org.w3c.dom.Text;
 
 import static android.hardware.Sensor.TYPE_ACCELEROMETER;
 
+
 public class PedometerActivity extends AppCompatActivity implements SensorEventListener {
 
     ProgressBar progressBar;
@@ -149,11 +150,10 @@ public class PedometerActivity extends AppCompatActivity implements SensorEventL
 
 
         stepCount += (int) step;
-        stepText.setText(String.format(getResources().getString(R.string.steps), stepCount));
-
         distance = stepCount * 0.8; //Average step length in an average adult
         String distanceString = String.format("%.2f m", distance);
         distanceText.setText(String.format(getResources().getString(R.string.distance), distanceString));
+        stepText.setText(String.format(getResources().getString(R.string.steps), stepCount));
 
     }
 

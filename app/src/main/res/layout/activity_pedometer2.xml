@@ -93,11 +93,11 @@
 
         <TextView
             android:id="@+id/stepsText"
-            android:layout_width="25dp"
+            android:layout_width="100dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="-120dp"
+            android:layout_marginLeft="-160dp"
             android:layout_marginTop="70dp"
-            android:text="0"
+            android:text="   0"
             android:textColor="#FFDAB9"
             android:textStyle="bold"
             android:textSize="40dp"
@@ -117,20 +117,20 @@
             android:id="@+id/timeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="5dp"
             android:layout_marginTop="320dp"
             android:layout_weight="1"
 
-            android:text="0" />
+            android:text="" />
 
         <TextView
             android:id="@+id/kcalText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="-345dp"
+            android:layout_marginLeft="-375dp"
             android:layout_marginTop="320dp"
             android:layout_weight="1"
-            android:text="0" />
+            android:text="" />
 
         <TextView
             android:id="@+id/distanceText"
@@ -139,7 +139,7 @@
             android:layout_marginLeft="-340dp"
             android:layout_marginTop="320dp"
             android:layout_weight="1"
-            android:text="0" />
+            android:text="" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
