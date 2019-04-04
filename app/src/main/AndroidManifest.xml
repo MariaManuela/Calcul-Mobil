@@ -34,7 +34,22 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.calculmobil.calculmobil.BodyActivity" />
         </activity>
-
+        <activity
+            android:name=".SettingsActivity"
+            android:label="Settings Activity"
+            android:parentActivityName=".PedometerActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.calculmobil.calculmobil.PedometerActivity" />
+        </activity>
+        <activity
+            android:name=".CalendaActivity"
+            android:label="Calendar Activity"
+            android:parentActivityName=".PedometerActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.calculmobil.calculmobil.PedometerActivity" />
+        </activity>
     </application>
 
 </manifest>

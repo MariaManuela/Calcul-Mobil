@@ -11,17 +11,20 @@
     <FrameLayout
         android:id="@+id/base_layout"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_height="match_parent">
+       >
 
         <ImageButton
             android:id="@+id/girlButton"
             android:layout_width="102dp"
             android:layout_height="106dp"
-            android:src="@drawable/girl"
             android:layout_gravity="left"
             android:layout_marginLeft="60dp"
             android:layout_marginTop="200dp"
+            android:src="@drawable/girl"
+            android:text="Girl"
+
 
             />
 
@@ -45,6 +48,21 @@
             android:text="Choose your gender:"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="18dp" />
+
+
+        <TextView
+            android:id="@+id/girlText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Girl"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/boyText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Boy"
+            android:visibility="gone"/>
     </FrameLayout>
 
 

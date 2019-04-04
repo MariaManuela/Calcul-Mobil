@@ -1,6 +1,7 @@
 package com.calculmobil.calculmobil;
 
 import android.content.Context;
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -18,6 +19,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 
 import org.w3c.dom.Text;
 
@@ -26,8 +28,10 @@ import static android.hardware.Sensor.TYPE_ACCELEROMETER;
 
 public class PedometerActivity extends AppCompatActivity implements SensorEventListener {
 
+    DatabaseHelper myDb;
     ProgressBar progressBar;
     private ImageButton calendarIcon;
+    private ImageButton settingsButton;
     private Button startButton;
     private ImageView kcalIcon;
     private ImageView distanceIcon;
@@ -56,7 +60,8 @@ public class PedometerActivity extends AppCompatActivity implements SensorEventL
     private double distance = 0;
 
     private Handler handler = new Handler();
-
+    private SharedPreferences sharedPreferences;
+    private int dayStepRecord;
 
 
 
@@ -64,6 +69,9 @@ public class PedometerActivity extends AppCompatActivity implements SensorEventL
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pedometer2);
+
+        myDb = new DatabaseHelper(this);
+
         calendarIcon = (ImageButton) findViewById(R.id.calendarButton);
         startButton = (Button) findViewById(R.id.startPauseButton);
         progressBar = (ProgressBar) findViewById((R.id.progressBar));
@@ -74,6 +82,7 @@ public class PedometerActivity extends AppCompatActivity implements SensorEventL
         timeText = (TextView) findViewById(R.id.timeText);
         kcalText = (TextView) findViewById(R.id.kcalText);
         distanceText = (TextView) findViewById(R.id.distanceText);
+        settingsButton = (ImageButton) findViewById(R.id.settingsButton);
         setViewDefaultValues();
 
 
@@ -82,7 +91,7 @@ public class PedometerActivity extends AppCompatActivity implements SensorEventL
         accelerometer = sensorManager.getDefaultSensor(TYPE_ACCELEROMETER);
         magnetometer = sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
 
-
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
         if(stepDetectorSensor == null)
             showErrorDialog();
@@ -106,6 +115,24 @@ public class PedometerActivity extends AppCompatActivity implements SensorEventL
                }
             });
         }
+
+        settingsButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(PedometerActivity.this, SettingsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        calendarIcon.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent = new Intent(PedometerActivity.this, CalendaActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
     }

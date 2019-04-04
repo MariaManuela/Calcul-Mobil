@@ -1,6 +1,8 @@
 package com.calculmobil.calculmobil;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,19 +10,32 @@ import android.widget.Button;
 import android.widget.NumberPicker;
 import android.widget.Toast;
 
+import java.sql.RowId;
+
 
 public class BodyActivity extends AppCompatActivity {
+
+    DatabaseHelper myDb;
 
     NumberPicker weightPicker;
     NumberPicker heightPicker;
     NumberPicker decWeightPicker;
     NumberPicker decHeightPicker;
     Button nextButton;
+    String[] elements;
+    MainActivity gender = new MainActivity();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_body);
+
+        Intent intent = getIntent();
+        elements=intent.getStringArrayExtra("myExtras");
+
+        myDb = new DatabaseHelper(this);
 
         weightPicker = (NumberPicker) findViewById(R.id.weight_id);
         decWeightPicker = (NumberPicker) findViewById((R.id.secondWeight_id));
@@ -29,10 +44,8 @@ public class BodyActivity extends AppCompatActivity {
         nextButton = (Button) findViewById(R.id.nextButton);
 
 
-
-
         weightPicker.setMinValue(40);
-        weightPicker.setMinValue(250);
+        weightPicker.setMaxValue(250);
         decWeightPicker.setMinValue(0);
         decWeightPicker.setMaxValue(9);
 
@@ -45,23 +58,18 @@ public class BodyActivity extends AppCompatActivity {
         nextButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                elements[1] = heightPicker.getValue()+"."+decHeightPicker.getValue();
+                elements[2] = weightPicker.getValue()+"."+decWeightPicker.getValue();
+                myDb.insert(elements[0],elements[1], elements[2]);
+
                 Intent intent = new Intent(BodyActivity.this, PedometerActivity.class);
+               // intent.putExtra("myExtras", elements);
                 startActivity(intent);
             }
         });
 
-       // weightPicker.setOnValueChangedListener(onValueChangeListener);
-       // decWeightPicker.setOnValueChangedListener(onValueChangeListener);
-       // heightPicker.setOnValueChangedListener(onValueChangeListener);
-        //decHeightPicker.setOnValueChangedListener(onValueChangeListener);
+
     }
 
-    //NumberPicker.OnValueChangeListener onValueChangeListener = new NumberPicker.OnValueChangeListener(){
-      //  @Override
-       // public void onValueChange(NumberPicker numberPicker, int i, int i1) {
-            //Toast.makeText(BodyActivity.this,
-                 //   "selected number "+numberPicker.getValue(), Toast.LENGTH_SHORT);
-        //}
 
-    //};
 }
