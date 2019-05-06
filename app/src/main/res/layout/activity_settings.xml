@@ -29,5 +29,13 @@
             android:layout_marginLeft="120dp"
             android:layout_marginTop="-150dp"
             android:text="Set your daily goal:" />
+
+        <Button
+            android:id="@+id/setButton"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="135dp"
+            android:layout_marginTop="200dp"
+            android:text="Set" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
